@@ -42,12 +42,15 @@ class PokemonCardListView(ListView):
     model = PokemonCard
     context_object_name = 'pokemoncard'
     template_name = "pokemon-card.html"
-    json_file_path = 'data/pokemon_data.json'
+    # paginate_by = 3
+    json_file_path = 'data/pokemon_data.json' 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pokemon_data = self.get_pokemon_data()
         context['pokemon_data'] = pokemon_data
         return context
+    
     def get_pokemon_data(self):
         with open(self.json_file_path, 'r') as file:
             data = json.load(file)

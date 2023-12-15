@@ -12,9 +12,8 @@
 {% endblock %}
 
 {% block content %}
-    <a href="{% url 'pokemon-card-add' %}" class="btn btn-outline-primary">Add New Pokemon</a><br>
+    <a href="{% url 'pokemon-card-add' %}" class="add-btn">Add New Pokemon</a><br>
     <section class="cards-container">
-        <!-- Display Pokemon Cards -->
         {% for object in object_list %}
             <div class="card-box">
                 <div class="card">
@@ -64,8 +63,8 @@
                             </tbody>
                         </table>
                         <hr />
-                        <a href="pokemon_card/{{ object.id }}" >Edit</a> |
-                        <a href="pokemon_card/{{ object.id }}/delete" >Delete</a>
+                        <a href="pokemon_card/{{ object.id }}" class="edit-del-btn">Edit</a> |
+                        <a href="pokemon_card/{{ object.id }}/delete" class="edit-del-btn">Delete</a>
                     </div>
                 </div>
             </div>
